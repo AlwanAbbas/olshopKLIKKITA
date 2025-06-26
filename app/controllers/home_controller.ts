@@ -3,7 +3,8 @@ import Product from '#models/product'
 import Category from '#models/category'
 
 export default class HomeController {
-  async index({ inertia }: HttpContext) {
+  async index({ inertia, auth }: HttpContext) {
+    const user = auth.user
     const flashSales = await Product.query().where('is_flash_sale', true)
     const bestSellers = await Product.query().where('is_best_seller', true)
     const newArrivals = await Product.query().where('is_new_arrival', true)
@@ -16,6 +17,7 @@ export default class HomeController {
       newArrivals,
       categories,
       products,
+      user,
     })
   }
 }

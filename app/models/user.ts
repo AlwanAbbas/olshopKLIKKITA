@@ -21,7 +21,7 @@ export default class User extends compose(BaseModel, AuthFinder) {
   declare email: string
 
   @column()
-  public role!: string
+  public role!: 'admin' | 'member'
 
   @column()
   declare address: string | null // opsional juga

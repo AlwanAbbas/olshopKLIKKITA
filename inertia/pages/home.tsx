@@ -29,7 +29,7 @@ type PageProps = {
 
 export default function Home() {
   const { props } = usePage<PageProps>();
-  const { categories, flashSales, bestSellers } = props;
+  const { flashSales, bestSellers } = props;
 
   return (
     <>
@@ -64,16 +64,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Kategori */}
-      <section className="my-10 px-4">
-        <h2 className="font-bold text-xl mb-4">Jelajahi Menurut Kategori</h2>
-        <div className="flex flex-wrap justify-center gap-4">
-          {categories.map((cat) => (
-            <Button variant="outline" key={cat.id}>{cat.name}</Button>
-          ))}
-        </div>
-      </section>
-
       {/* Produk Terlaris */}
       <section className="my-10 px-4">
         <h2 className="font-bold text-xl mb-4">Produk Terlaris</h2>
@@ -95,10 +85,10 @@ export default function Home() {
         <div className="bg-black text-white rounded-lg flex flex-col md:flex-row items-center justify-between p-6">
           <div>
             <h3 className="text-xl font-bold mb-2">Enhance Your Music Experience</h3>
-            <p className="text-sm">Upgrade sound system terbaik mulai dari 29%</p>
+            <p className="text-sm">Upgrade Kuping Anda dengan membeli Produk IEM ini</p>
             <Button className="mt-4 bg-green-500 hover:bg-green-600">Buy Now</Button>
           </div>
-          <img src="/images/speaker-banner.png" alt="Speaker" className="max-w-xs mt-4 md:mt-0" />
+          <img src="../public/assets/products/MAY.png" alt="MAY" className="max-w-xs mt-4 md:mt-0" />
         </div>
       </section>
 
@@ -127,7 +117,7 @@ export default function Home() {
             <p className="font-semibold mt-2">Koleksi Wanita</p>
           </div>
           <div className="bg-gray-100 p-4 rounded-lg text-center">
-            <img src="/images/speaker-box.jpg" className="mx-auto" />
+            <img src="../public/assets/products/MAY.png" className="mx-auto" />
             <p className="font-semibold mt-2">Speaker</p>
           </div>
           <div className="bg-gray-100 p-4 rounded-lg text-center">
