@@ -30,3 +30,8 @@ router.group(() => {
   router.delete('/admin/products/:id', [AdminProductsController, 'destroy'])
 })
 //   .middleware(['auth', 'admin']) // <-- Aktifkan middleware
+
+router.get('/contact', [() => import('#controllers/contacts_controller'), 'showForm'])
+router.post('/contact', [() => import('#controllers/contacts_controller'), 'submitForm'])
+
+router.get('/about', [() => import('#controllers/about_controller'), 'index'])
