@@ -1,4 +1,6 @@
 import router from '@adonisjs/core/services/router'
+import CartController from '#controllers/cart_controller'
+import CheckoutController from '#controllers/checkout_controller' // ✅ Tambahan ini
 
 // Import controllers
 const HomeController = () => import('#controllers/home_controller')
@@ -37,3 +39,42 @@ router.get('/contact', [() => import('#controllers/contacts_controller'), 'showF
 router.post('/contact', [() => import('#controllers/contacts_controller'), 'submitForm'])
 
 router.get('/about', [() => import('#controllers/about_controller'), 'index'])
+
+// ===================
+// Account Routes
+// ===================
+
+router
+  .group(() => {
+    router.get('/', [() => import('#controllers/account_controller'), 'profile'])
+    router.get('/profile', [() => import('#controllers/account_controller'), 'profile'])
+  })
+  .prefix('/account')
+
+// ===================
+// Cart Routes
+// ===================
+
+router.get('/cart', async (ctx) => {
+  const controller = new CartController()
+  return controller.index(ctx)
+})
+
+router.post('/cart/update', async (ctx) => {
+  const controller = new CartController()
+  return controller.update(ctx)
+})
+
+// ===================
+// Checkout Routes
+// ===================
+
+router.get('/checkout', async (ctx) => {
+  const controller = new CheckoutController()
+  return controller.show(ctx)
+})
+
+router.post('/checkout', async (ctx) => {
+  const controller = new CheckoutController()
+  return controller.store(ctx)
+})

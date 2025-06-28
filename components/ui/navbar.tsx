@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "@inertiajs/react";
-import { FaSearch, FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
+
 
 export default function Navbar() {
     const [searchQuery, setSearchQuery] = useState("");
@@ -8,8 +9,6 @@ export default function Navbar() {
     const handleSearch = () => {
         if (searchQuery.trim()) {
             console.log("Searching for:", searchQuery);
-            // Misalnya redirect ke halaman pencarian
-            // Inertia.visit(`/search?query=${encodeURIComponent(searchQuery)}`);
         }
     };
 
@@ -20,11 +19,17 @@ export default function Navbar() {
     };
 
     return (
-        <header className="flex items-center justify-between px-6 py-4 shadow-md bg-white">
-            {/* Logo */}
-            <h1 className="font-bold text-xl">KilkKita</h1>
+        <header className="flex items-center justify-between px-6 py-4 shadow-md bg-blue-100">
+            <div className="flex items-center gap-2">
+                <img
+                    src="resources/images/logo.png"
+                    alt="Logo KlikKita"
+                    className="h-11 w-auto"
+                />
+                <h1 className="font-bold text-xl">KlikKita</h1>
+            </div>
 
-            {/* Menu Navigasi */}
+
             <nav className="flex gap-6 text-sm">
                 <Link href="/" className="hover:underline">Beranda</Link>
                 <Link href="/contact" className="hover:underline">Kontak</Link>
@@ -54,11 +59,12 @@ export default function Navbar() {
                 </div>
 
                 {/* Ikon-ikon */}
-                <FaHeart className="text-xl cursor-pointer" />
+                <Link href="/cart" className="text-gray-700 hover:text-blue-600 transition duration-200">
                 <FaShoppingCart className="text-xl cursor-pointer" />
-                <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-                    <FaUser className="text-white text-sm" />
-                </div>
+                </Link>
+                <Link href="/account" className="text-gray-700 hover:text-blue-600 transition duration-200">
+                <FaUser className="text-xl cursor-pointer" />
+                </Link>
             </div>
         </header>
     );

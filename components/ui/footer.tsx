@@ -3,7 +3,7 @@ import { Link } from "@inertiajs/react"
 
 export default function Footer() {
     return (
-        <footer className="bg-blue-500 text-white py-10 px-4">
+        <footer className="bg-blue-200 text-gray-800 py-10 px-4">
             <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-sm">
                 {/* Brand + Newsletter */}
                 <div>
@@ -26,7 +26,6 @@ export default function Footer() {
                     <ul className="space-y-1">
                         <li><Link href="/login">Login / Register</Link></li>
                         <li><Link href="/cart">Cart</Link></li>
-                        <li><Link href="/wishlist">Wishlist</Link></li>
                         <li><Link href="/shop">Shop</Link></li>
                     </ul>
                 </div>
@@ -47,8 +46,8 @@ export default function Footer() {
                     <h4 className="font-semibold mb-2">Download App</h4>
                     <p>Save $3 with App New User Only</p>
                     <div className="flex gap-2 mt-2">
-                        <img src="/images/googleplay.png" alt="Google Play" className="h-10" />
-                        <img src="/images/appstore.png" alt="App Store" className="h-10" />
+                        <img src="resources/images/play.png" alt="Google Play" className="h-10" />
+                        <img src="resources/images/app.png" alt="App Store" className="h-10" />
                     </div>
                 </div>
             </div>
