@@ -48,7 +48,7 @@ export default function Register() {
                     {/* Left Image */}
                     <div className="hidden md:block">
                         <img
-                            src="../public/assets/logoPT.png"
+                            src="resources/images/logo.png"
                             alt="KlikKita"
                             className="w-full max-w-md mx-auto"
                         />

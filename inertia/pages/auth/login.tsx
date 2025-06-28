@@ -48,7 +48,7 @@ export default function Login() {
                     {/* Left Image */}
                     <div className="w-full md:w-1/2 hidden md:flex justify-center">
                         <img
-                            src="../public/assets/logoPT.png"
+                            src="resources/images/logo.png"
                             alt="KlikKita"
                             className="w-full max-w-md"
                         />
